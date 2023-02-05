@@ -61,7 +61,6 @@ public class GamePanel extends JPanel implements ActionListener {
 		timer.start();
 		threadForRenderApple = new Thread() {
 			public void run() {
-				boolean firstEaten = false;
 				while (true) {
 					if (checkAppleEaten) {
 						try {
@@ -227,6 +226,7 @@ public class GamePanel extends JPanel implements ActionListener {
 	}
 
 	public void gameOver(Graphics g) {
+		threadForPlayingTime.stop();
 		// Score
 		g.setColor(Color.red);
 		g.setFont(new Font("Ink Free", Font.BOLD, 40));
