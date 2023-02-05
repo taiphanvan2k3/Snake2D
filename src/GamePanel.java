@@ -66,7 +66,6 @@ public class GamePanel extends JPanel implements ActionListener {
 						try {
 							threadForRenderApple.sleep(2000);
 						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 						newApple();
@@ -82,7 +81,6 @@ public class GamePanel extends JPanel implements ActionListener {
 						Thread.sleep(1000);
 						updatePlayingTime();
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
