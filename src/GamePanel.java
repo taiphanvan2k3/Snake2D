@@ -75,19 +75,19 @@ public class GamePanel extends JPanel implements ActionListener {
 			}
 		};
 
-		threadForPlayingTime = new Thread() {
-			public void run() {
-				while (true) {
-					try {
-						Thread.sleep(1000);
-						updatePlayingTime();
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
-			}
-		};
+//		threadForPlayingTime = new Thread() {
+//			public void run() {
+//				while (true) {
+//					try {
+//						Thread.sleep(1000);
+//						updatePlayingTime();
+//					} catch (InterruptedException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//				}
+//			}
+//		};
 		// threadForPlayingTime.start();
 		threadForRenderApple.start();
 	}
