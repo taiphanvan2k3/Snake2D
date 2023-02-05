@@ -23,6 +23,8 @@ public class GamePanel extends JPanel implements ActionListener {
 	static final int UNIT_SIZE = 25;
 	static final int DELAY = 75;
 	static final int GAME_UNITS = (SCREEN_HEIGHT * SCREEN_WIDTH) / UNIT_SIZE;
+
+	// X[i],Y[i] là toạ độ của tưng đoạn con rắn, với X[0],Y[0] là toạ độ đầu rắn
 	int X[] = new int[GAME_UNITS];
 	int Y[] = new int[GAME_UNITS];
 
@@ -62,6 +64,7 @@ public class GamePanel extends JPanel implements ActionListener {
 		threadForRenderApple = new Thread() {
 			public void run() {
 				while (true) {
+					System.out.println();
 					if (checkAppleEaten) {
 						try {
 							threadForRenderApple.sleep(2000);
@@ -207,13 +210,13 @@ public class GamePanel extends JPanel implements ActionListener {
 		if (X[0] < 0)
 			running = false;
 		// kiểm tra đầu chạm với tường phải
-		if (X[0] > SCREEN_WIDTH)
+		if (X[0] > SCREEN_WIDTH || (X[0] == SCREEN_WIDTH && direction == 'R'))
 			running = false;
 		// kiểm tra đầu chạm với tường trên
 		if (Y[0] < 0)
 			running = false;
 		// kiểm tra đầu chạm với tường dưới
-		if (Y[0] > SCREEN_HEIGHT)
+		if (Y[0] > SCREEN_HEIGHT || (Y[0] == SCREEN_HEIGHT && direction == 'D'))
 			running = false;
 		if (!running) {
 			timer.stop();
